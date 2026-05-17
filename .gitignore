@@ -19,6 +19,7 @@ dist/
 target/
 .soroban/
 .stellar/
+test_snapshots/
 
 # Logs and caches
 *.log
