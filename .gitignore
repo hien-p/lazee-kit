@@ -1,0 +1,29 @@
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Node/Astro output
+node_modules/
+dist/
+.astro/
+.vite/
+
+# Rust/Soroban output and local state
+target/
+.soroban/
+.stellar/
+
+# Logs and caches
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.cache/
+.tmp/

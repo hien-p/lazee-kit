@@ -1,0 +1,40 @@
+flowchart TD
+  RFP["SCF RFP: C-Address Tooling & Onboarding"]
+  A["Create C-address easily"]
+  B["Fund or sponsor first action"]
+  C["Reusable SDK and UI"]
+  D["Reference wallet/app flow"]
+  E["Production docs and tests"]
+  F["Open-source maintenance"]
+
+  L["Lazee Kit"]
+  LA["Passkey-style Lazee Account"]
+  LR["Sponsor Relay"]
+  LG["Gift and Claim Links"]
+  LS["SDK + React UI Kit"]
+  LD["Reference Demo App"]
+  LT["Threat Model + Test Matrix"]
+  LM["12-month Maintenance Plan"]
+
+  RFP --> A
+  RFP --> B
+  RFP --> C
+  RFP --> D
+  RFP --> E
+  RFP --> F
+
+  L --> LA
+  L --> LR
+  L --> LG
+  L --> LS
+  L --> LD
+  L --> LT
+  L --> LM
+
+  A --> LA
+  B --> LR
+  B --> LG
+  C --> LS
+  D --> LD
+  E --> LT
+  F --> LM

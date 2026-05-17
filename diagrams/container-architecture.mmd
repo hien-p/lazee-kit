@@ -1,0 +1,42 @@
+flowchart TB
+  subgraph Client["Client Layer"]
+    App["Reference App"]
+    UI["React UI Kit"]
+    SDK["Lazee SDK"]
+  end
+
+  subgraph Services["Service Layer"]
+    Relay["Sponsor Relay"]
+    Intent["Intent Orchestrator"]
+    Indexer["Indexer / Events API"]
+    Obs["Observability"]
+  end
+
+  subgraph Contracts["Soroban Contracts"]
+    Account["Lazee Account"]
+    Gift["GiftVault"]
+    Session["SessionRegistry"]
+    Policy["SponsorPolicy"]
+  end
+
+  subgraph Stellar["Stellar Network"]
+    SAC["Stellar Asset Contracts"]
+    RPC["Stellar RPC"]
+  end
+
+  App --> UI
+  UI --> SDK
+  SDK --> Relay
+  SDK --> Intent
+  SDK --> Indexer
+  Relay --> RPC
+  Intent --> Relay
+  Indexer --> RPC
+  Relay --> Account
+  Relay --> Gift
+  Relay --> Session
+  Account --> SAC
+  Gift --> SAC
+  Session --> Account
+  Policy --> Relay
+  Services --> Obs

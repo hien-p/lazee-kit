@@ -1,0 +1,22 @@
+sequenceDiagram
+  participant User
+  participant App as Lazee App
+  participant SDK as Lazee SDK
+  participant Registry as SessionRegistry
+  participant Agent
+  participant Contract as Allowed Contract
+  participant Indexer
+
+  User->>App: Configure DCA session
+  App->>SDK: create session policy
+  SDK-->>User: show permission preview
+  User->>SDK: approve
+  SDK->>Registry: store policy
+  Registry-->>Indexer: SessionCreated event
+  Agent->>Registry: execute with session
+  Registry->>Registry: check cap, expiry, allowlists, revocation
+  Registry->>Contract: execute allowed action
+  Registry-->>Indexer: SessionExecuted event
+  User->>App: Revoke session
+  SDK->>Registry: revoke
+  Registry-->>Indexer: SessionRevoked event

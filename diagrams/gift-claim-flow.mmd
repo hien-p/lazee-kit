@@ -1,0 +1,22 @@
+sequenceDiagram
+  participant Sender
+  participant App as Lazee App
+  participant SDK as Lazee SDK
+  participant Gift as GiftVault
+  participant Receiver
+  participant Relay as Sponsor Relay
+  participant Account as Receiver Lazee Account
+  participant Indexer
+
+  Sender->>App: Create USDC gift link
+  App->>SDK: create gift intent
+  SDK->>Gift: deposit asset and store claim hash
+  Gift-->>Indexer: GiftCreated event
+  App-->>Sender: show claim URL
+  Receiver->>App: Open claim URL
+  App->>SDK: create or load C-address
+  SDK->>Relay: sponsored claim transaction
+  Relay->>Account: receiver authorization
+  Relay->>Gift: prove secret and claim
+  Gift-->>Indexer: GiftClaimed event
+  App-->>Receiver: show USDC balance and receipt

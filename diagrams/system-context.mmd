@@ -1,0 +1,16 @@
+flowchart LR
+  User["End User"]
+  Dev["Developer App"]
+  Agent["Agent or Bot"]
+  Wallet["Wallet / App Team"]
+  Lazee["Lazee Kit"]
+  Stellar["Stellar Network"]
+  Provider["Swap / Bridge Quote Provider"]
+
+  User -->|"create account, claim, revoke"| Lazee
+  Dev -->|"SDK + UI integration"| Lazee
+  Agent -->|"execute scoped session"| Lazee
+  Wallet -->|"inspect, integrate, fork"| Lazee
+  Lazee -->|"Soroban contracts, assets, receipts"| Stellar
+  Lazee -->|"optional quotes and routes"| Provider
+  Provider -->|"route status"| Lazee
