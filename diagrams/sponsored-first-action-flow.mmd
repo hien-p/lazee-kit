@@ -1,0 +1,21 @@
+sequenceDiagram
+  autonumber
+  participant User
+  participant App as Reference App
+  participant SDK as Lazee SDK
+  participant Helper as Sponsor Helper
+  participant RPC as Stellar RPC
+  participant Net as Stellar Network
+
+  User->>App: Open app and choose first action
+  App->>SDK: prepare sponsored action
+  SDK-->>App: action preview and expected result
+  User->>App: approve action
+  App->>Helper: request simulation and sponsorship
+  Helper->>RPC: simulate transaction
+  RPC-->>Helper: simulation result
+  Helper->>Net: submit sponsored transaction
+  Net-->>Helper: transaction hash
+  Helper->>RPC: poll transaction status
+  Helper-->>App: receipt status
+  App-->>User: show tx hash, status, and next step

@@ -3,8 +3,8 @@
 ## Slide Structure
 
 1. Lazee Kit title
-2. C-address onboarding problem
-3. Why this RFP matters
+2. Sponsored first-action problem
+3. Why this Build focus matters
 4. What Lazee Kit ships
 5. Demo flow
 6. Architecture
@@ -33,12 +33,12 @@ Problem slide:
 
 Architecture slide:
 
-- Show user, app, SDK, relay, contracts, indexer, Stellar network
+- Show user, app, SDK, sponsor helper, RPC, receipt UI, Stellar network
 - Label trust boundaries clearly
 
 Impact slide:
 
-- C-address adoption
+- First-action conversion
 - Stablecoin payments
 - Developer velocity
 - Safe automation

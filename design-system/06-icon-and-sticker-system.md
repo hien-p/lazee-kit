@@ -15,7 +15,7 @@
 | Icon | Metaphor | Primary Color |
 |---|---|---|
 | Passkey | fingerprint plus keyhole | sky |
-| C-address | rounded card with C... | lemon |
+| Sponsored action | fee drop plus check | lemon |
 | Sponsored action | blue drop carrying fee ticket | blue |
 | Gift link | heart box plus chain | pink |
 | Claim | hand receiving spark | mint |
@@ -23,13 +23,13 @@
 | Scoped session | stopwatch plus shield | green |
 | Revoke | broken chain plus lock | red |
 | Agent automation | small bot with leash line | black/sky |
-| DCA | calendar plus swap arrows | lemon/green |
+| Budget cap | calendar plus limit line | lemon/green |
 | Swap | two rounded arrows | blue |
 | Bridge-in | bridge plus incoming arrow | sky/orange |
 | Receipt | paper slip plus check | cream/green |
 | SDK | puzzle block | pink |
 | Relay | radio tower plus droplet | blue |
-| Indexer | stacked event cards | ink |
+| Receipt store | stacked receipt cards | ink |
 
 ## Icon Grid
 

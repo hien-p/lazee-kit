@@ -1,5 +1,5 @@
 #![no_std]
-//! Lazee Account — C-address smart account.
+//! Lazee Account - experimental account helper scaffold.
 //!
 //! Holds a registry of ed25519 signer public keys and a replay nonce. Implements
 //! Soroban custom-account auth (`__check_auth`): every signer in the registry must

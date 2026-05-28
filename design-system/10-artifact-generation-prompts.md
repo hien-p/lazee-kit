@@ -10,7 +10,7 @@ Create the Lazee Sun mascot in a happy success pose, smiling, glowing softly, ho
 
 ## Lazee Sun Focused State
 
-Create the Lazee Sun mascot reviewing a permission card, focused expression, small shield icon nearby, yellow face, orange rays, thick white sticker outline, cream background, safe smart account UX mood.
+Create the Lazee Sun mascot reviewing a sponsored-action preview card, focused expression, small shield icon nearby, yellow face, orange rays, thick white sticker outline, cream background, safe transaction UX mood.
 
 ## Lazee Sun Nervous State
 
@@ -18,16 +18,16 @@ Create the Lazee Sun mascot with a cautious expression and tiny sweat mark, hold
 
 ## Sticker Icon Pack
 
-Create a cohesive sticker icon pack for Lazee Kit with 16 icons: passkey, C-address, sponsored action, gift link, claim, refund, scoped session, revoke, agent automation, DCA, swap, bridge-in, receipt, SDK, relay, indexer. Use thick white sticker outlines, rounded geometry, pastel pink sky lemon mint orange palette, dark ink strokes, transparent background.
+Create a cohesive sticker icon pack for Lazee Kit with 12 icons: sponsored action, fee sponsorship, transaction preview, wallet approval, receipt, SDK, React component, RPC status, budget cap, rate limit, monitoring, runbook. Use thick white sticker outlines, rounded geometry, pastel pink sky lemon mint orange palette, dark ink strokes, transparent background.
 
 ## Hero Composition
 
-Create a hero image for Lazee Kit: Lazee Sun mascot floating beside rounded app cards showing C-address creation, sponsored first action, USDC gift claim, and safe session. Pastel cream background, pink and sky panels, sticker icons, soft shadows, friendly fintech infrastructure mood, no stock imagery.
+Create a hero image for Lazee Kit: Lazee Sun mascot floating beside rounded app cards showing action preview, sponsored first action, transaction receipt, and SDK/UI components. Pastel cream background, pink and sky panels, sticker icons, soft shadows, friendly fintech infrastructure mood, no stock imagery.
 
 ## Pitch Deck Cover
 
-Create a pitch deck cover for Lazee Kit with large rounded title, Lazee Sun mascot, C-address onboarding stickers, pastel cream and sky background, proof pills reading RFP Track, Open Source, Sponsored First Action, Scoped Sessions.
+Create a pitch deck cover for Lazee Kit with large rounded title, Lazee Sun mascot, sponsored-action stickers, pastel cream and sky background, proof pills reading Open Track, Open Source, Sponsored First Action, Real Receipts.
 
 ## Demo Storyboard Panels
 
-Create 8 storyboard panels for a fintech onboarding demo: welcome, create C-address, sponsor first action, create gift link, claim gift, receipt, scoped session, revoke. Pastel cards, sticker icons, clear UI labels, friendly but credible.
+Create 4 storyboard panels for a fintech onboarding demo: welcome, approve action, sponsor and submit, receipt. Pastel cards, sticker icons, clear UI labels, friendly but credible.

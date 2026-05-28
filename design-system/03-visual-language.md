@@ -6,7 +6,7 @@ Lazee Kit uses two modes that share tokens but differ in density and tone.
 
 ## Play Mode
 
-Use for onboarding, hero, gift links, claim flows, success states, and demo moments.
+Use for onboarding, hero, sponsored actions, receipt flows, success states, and demo moments.
 
 Traits:
 
@@ -27,7 +27,7 @@ Example sections:
 
 ## Protocol Mode
 
-Use for architecture, RFP fit, milestones, security, SDK docs, and reviewer proof.
+Use for architecture, Build fit, milestones, security, SDK docs, and reviewer proof.
 
 Traits:
 
@@ -43,7 +43,7 @@ Example sections:
 
 - RFP mapping table
 - System architecture
-- Sponsor relay trust boundary
+- Sponsor helper trust boundary
 - Test matrix
 - Budget and milestones
 

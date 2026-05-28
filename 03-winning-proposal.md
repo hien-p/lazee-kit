@@ -10,79 +10,75 @@
 
 ## Executive Summary
 
-Lazee Kit is an open-source C-address onboarding and execution toolkit for Stellar applications. It gives developers a reusable way to create app experiences where users can create smart accounts with passkey-style UX, complete a first action without upfront XLM, send or claim USDC through links, and grant safe scoped automation sessions without handing over private keys.
+Lazee Kit is an open-source sponsored onboarding toolkit for Stellar applications. It gives developers a reusable way to let users complete a first meaningful onchain action without dealing with XLM funding, fee setup, or custom transaction-status plumbing upfront.
 
-The project is intentionally not positioned as a standalone wallet. Lazee Kit is an embeddable developer layer: smart account contracts, sponsor relay, gift vault, session registry, SDK, React UI kit, reference app, docs, tests, and operational runbooks.
+The project is intentionally not positioned as a standalone wallet, gift-link product, session registry, smart-account rewrite, or broad automation platform. Lazee Kit is an embeddable developer layer: a sponsor helper, SDK, React UI kit, reference app, docs, tests, threat model, and operational runbooks.
 
-## RFP Addressed
+## Track
 
-Lazee Kit addresses the **C-Address Tooling & Onboarding** RFP under the SCF RFP Track.
+Lazee Kit should be submitted as **Open Track / Developer Tooling**. The proposal should not claim a track that is not selectable in the form.
 
 ## Problem
 
-C-addresses can unlock better UX on Stellar, but they remain difficult for users and developers:
+Stellar apps can settle value quickly and cheaply, but the first minute is still hard for normal users and repetitive for developers:
 
-- Users still face account type complexity, reserves, funding, fees, signatures, and wallet setup.
-- Apps must assemble onboarding, sponsorship, session grants, receipt tracking, and support flows from scratch.
-- Existing approaches often solve only one piece: wallet UI, funding, passkeys, or account contracts.
-- Safe automation is hard because agents and apps need permissions without broad key access.
+- Users meet funding, fees, trustlines, wallet prompts, and transaction uncertainty too early.
+- Apps must assemble sponsorship, submission, receipt display, error handling, and support flows from scratch.
+- Existing approaches often solve only one piece: a wallet screen, a relayer, a demo contract, or a docs page.
 
-The result is a first-minute experience that feels too technical for mainstream payments, gaming, creator, consumer, and agent products.
+The result is a first-action experience that feels too technical for payments, creator, consumer, education, gaming, and hackathon products.
 
 ## Why Stellar
 
-Stellar is the right network for this because it combines low-cost settlement, fast finality, stable assets, and Soroban smart contracts. A C-address onboarding kit is especially valuable on Stellar because sponsored first actions and USDC claim flows can be practical at small transaction sizes.
+Stellar is the right network for this because it combines low-cost settlement, fast finality, stable assets, and Soroban smart contracts. Sponsored first actions are practical on Stellar because the transaction cost is low enough for apps to absorb during onboarding.
 
-Lazee Kit is Stellar-native. It is built around C-address smart accounts, Stellar assets, Soroban contracts, Stellar RPC, and the Stellar account model. It is not a chain-agnostic abstraction.
+Lazee Kit is Stellar-native. It is built around Stellar transactions, Stellar assets, Soroban examples, Stellar RPC / Horizon status checks, and the Stellar account model. It is not a chain-agnostic abstraction.
 
 ## Solution
 
-Lazee Kit ships five primitives as one reusable package:
+Lazee Kit ships four primitives as one reusable package:
 
-1. **Passkey-style C-address account creation** for user-friendly smart accounts.
-2. **Sponsor relay** for first actions, simulation, submission, and fee sponsorship.
-3. **Gift and claim links** for USDC flows that receivers can claim without prior wallet setup.
-4. **Scoped sessions** for app and agent automation with caps, expiry, allowlists, and revocation.
-5. **Developer SDK and React UI kit** so apps can embed the flows without rebuilding them.
+1. **Sponsored first-action helper** that simulates, sponsors, submits, and reports transaction status.
+2. **Developer SDK** for building sponsored-action flows from app code.
+3. **React UI kit** for onboarding, sponsor status, transaction receipts, and error states.
+4. **Reference app, tests, docs, and runbooks** so reviewers and developers can verify the integration end to end.
 
 ## Why Lazee Is Better
 
-Lazee Kit is broader than a wallet, more outcome-driven than a passkey demo, and more reusable than a relayer. It pairs user-facing UX with developer-facing infrastructure.
+Lazee Kit is narrower than a wallet and more reusable than a one-off relayer demo. It pairs user-facing onboarding UX with developer-facing integration tooling.
 
-The first milestone proves the user-facing value: create C-address, sponsor first action, create gift, claim gift, view receipt. The later milestones package that into reusable developer infrastructure, sessions, observability, and mainnet pilot readiness.
+The first milestone proves the core user-facing value: approve one action, sponsor it, submit it, and show a receipt. Later milestones package that into reusable SDK/UI components, tests, docs, and a maintained public release.
 
 ## Technical Stack
 
-- Contracts: Soroban Rust smart account, session registry, gift vault, optional sponsor policy
 - Client: TypeScript SDK
 - UI: React UI kit
-- Backend services: sponsor relay, intent orchestrator, indexer/events API
-- Data: PostgreSQL or managed database for offchain receipts and operational state
+- Backend services: minimal sponsor helper for simulation, fee sponsorship, submission, polling, and receipt status
+- Contracts: small Soroban reference examples only where useful for the demo
+- Data: optional lightweight receipt log for demo analytics; critical state remains verifiable through Stellar RPC / Horizon and transaction hashes
 - Observability: OpenTelemetry-compatible traces, dashboards, error tracking
-- Network path: testnet first, mainnet pilot behind caps and feature flags
+- Network path: testnet first, mainnet guidance after testnet release
 
 ## Decentralization
 
-Lazee Kit uses offchain infrastructure where it improves UX, but keeps user authorization anchored in smart contracts. The sponsor relay pays fees and submits transactions; it does not control user assets. Session permissions are enforced by onchain policy. Gift funds are escrowed in the GiftVault contract, not by a centralized URL service.
+Lazee Kit uses offchain infrastructure only where it improves onboarding UX. The sponsor helper pays fees and submits transactions; it does not custody user assets or replace user authorization.
 
-The project is open source so apps can self-host relay and indexer components or use a hosted deployment during early adoption.
+The project is open source so apps can self-host the sponsor helper or adapt the SDK/UI components to their own infrastructure.
 
 ## Infrastructure
 
 The MVP runs on:
 
-- Stellar testnet contracts
-- Sponsor relay service
-- Intent/status API
-- Event indexer
+- Stellar testnet
+- Minimal sponsor helper
 - Reference app
 - Public docs and dashboards
 
-Production readiness includes multiple RPC providers, sponsor budget limits, rate limits, abuse controls, monitoring, and incident runbooks.
+Production readiness includes sponsor budget limits, rate limits, simulation checks, monitoring, and incident runbooks.
 
 ## Privacy And User Tracking
 
-Lazee Kit minimizes user tracking. It does not require PII for the core demo. Operational logs should scrub claim secrets and avoid storing raw passkey material. Analytics should focus on aggregate reliability and adoption metrics: account creation success, claim completion, sponsor spend, session rejection reasons, RPC failures, and indexer lag.
+Lazee Kit minimizes user tracking. It does not require PII for the core demo. Operational logs should avoid storing raw signing material. Analytics should focus on aggregate reliability: sponsor spend, transaction success, RPC failures, and completion rate.
 
 ## Open Source
 
@@ -105,4 +101,4 @@ The team commits to:
 
 ## Closing Ask
 
-Lazee Kit requests **$128,000 over 20 weeks** to ship a reusable, open-source C-address onboarding and execution layer for Stellar apps. The result is not one isolated application; it is infrastructure that can help many Stellar apps onboard users faster and more safely.
+Lazee Kit requests **$72,000 over 16 weeks** to ship reusable, open-source sponsored onboarding tooling for Stellar apps. The result is not one isolated application; it is tooling that can help many Stellar apps onboard users faster and more safely.

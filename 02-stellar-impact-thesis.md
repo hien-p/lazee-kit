@@ -4,33 +4,23 @@
 
 Stellar is already strong at fast settlement, low fees, and stable asset movement. The bottleneck is not whether the network can move value. The bottleneck is whether mainstream users and app developers can reach that value without crypto-native setup friction.
 
-C-addresses are a path to better UX, but they need tooling. Without tooling, every app must solve account creation, funding, sponsorship, receipts, session grants, revocation, and support from scratch. Lazee Kit turns those repeated tasks into reusable public infrastructure.
+Every app still has to solve the same first-action problems: funding, fee sponsorship, transaction submission, receipts, retries, error states, and support. Lazee Kit turns those repeated tasks into reusable public infrastructure.
 
 ## Ecosystem Impacts
 
-### 1. C-Address Adoption
+### 1. First-Action Conversion
 
-Lazee Kit makes C-addresses usable as the default account surface for apps. The user sees "create account with passkey" and "claim USDC"; the app handles the account model underneath.
-
-Measurable outcome:
-
-- New user completes first C-address action in under 60 seconds.
-- Testnet demo includes contract IDs and receipts.
-- Reference docs explain G-to-C and app-sponsored flows.
-
-### 2. Stablecoin Payments
-
-Gift and claim links make Stellar USDC feel like a consumer-grade payment primitive. Users can receive value before they know what XLM, reserves, or account funding mean.
+Lazee Kit lets a user complete one real Stellar action before they get lost in funding and fee setup.
 
 Measurable outcome:
 
-- Sender creates USDC gift link.
-- Receiver claims with new C-address.
-- Sender can refund expired unclaimed gift.
+- New user completes first sponsored Stellar action in under 60 seconds.
+- Testnet demo includes transaction hashes and receipts.
+- Reference docs explain app-sponsored flows.
 
-### 3. Developer Velocity
+### 2. Developer Velocity
 
-Apps should not rebuild onboarding, relay, receipts, and permission screens. Lazee ships SDK methods, UI components, and reference flows.
+Apps should not rebuild sponsorship, receipts, and transaction-status screens from scratch. Lazee ships SDK methods, UI components, and reference flows.
 
 Measurable outcome:
 
@@ -38,38 +28,38 @@ Measurable outcome:
 - Public integration guide.
 - Component catalog and SDK reference.
 
-### 4. Safer Automation
+### 3. Safer Sponsorship Operations
 
-The next wave of apps will include agents and background jobs. Lazee sessions let users grant limited permissions without giving agents private keys.
+Sponsored actions are useful only if apps can cap, monitor, and disable them safely.
 
 Measurable outcome:
 
-- DCA session can spend up to a configured cap.
-- Out-of-scope calls fail.
-- User can revoke session and see activity history.
+- Sponsor budget limits and rate limits are documented.
+- Runbooks cover abuse, RPC degradation, receipt mismatch, and key rotation.
+- Test matrix includes replay, allowed-action, rejected-action, and retry cases.
 
-### 5. Wallet And App Ecosystem
+### 4. Wallet And App Ecosystem
 
 Lazee is not a wallet replacement. It is reference infrastructure that wallets and apps can inspect, integrate, fork, or adapt.
 
 Measurable outcome:
 
-- Wallet feedback collected before M2.
+- Wallet and app feedback collected before M2.
 - Integration docs include wallet-compatible flows.
-- Reference UI separates user auth, relay sponsorship, and contract execution.
+- Reference UI separates user approval, sponsorship, submission, and receipts.
 
-### 6. Security Culture
+### 5. Security Culture
 
-C-address UX should not hide risk. Lazee makes permissions visible with risk previews, caps, expiry, receipts, and revocation.
+Good onboarding should not hide risk. Lazee makes sponsored actions visible with previews, limits, receipts, and clear failure states.
 
 Measurable outcome:
 
-- Permission preview exists for sessions.
+- Action preview exists before sponsorship.
 - Threat model is public.
-- Test matrix includes replay, cap, expiry, and revocation tests.
+- Test matrix covers sponsorship abuse, replay, RPC failures, and receipt status.
 
 ## Why Now
 
-SCF #41 already showed that C-address tooling is a real ecosystem priority. SCF #44 is the right moment to move from isolated C-address experiments toward a complete developer onboarding kit that turns C-addresses into app-ready infrastructure.
+SCF Build requires submissions to be complete, technical, and reviewer-verifiable. Lazee Kit can meet that bar with a focused scope: one sponsored first-action flow, reusable SDK/UI, real testnet proof, docs, tests, and runbooks.
 
-Lazee Kit should be framed as the bridge between protocol capability and product adoption.
+Lazee Kit should be framed as the bridge between Stellar's low-cost rails and app-level product adoption.

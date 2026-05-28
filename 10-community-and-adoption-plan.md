@@ -2,35 +2,35 @@
 
 ## Adoption Goal
 
-Lazee Kit should become a reusable reference for C-address onboarding across Stellar apps, not a single demo that fades after the grant.
+Lazee Kit should become a reusable reference for sponsored first actions across Stellar apps, not a single demo that fades after the grant.
 
 ## Pre-Submission Actions
 
 - Share the architecture brief with Stellar developer community members.
 - Ask for feedback from wallet and app teams.
-- Collect at least three quotes or issue links showing C-address onboarding pain.
-- Ask for RFP fit feedback before final submission.
-- Confirm whether any active C-address teams want to integrate or review the SDK.
+- Collect at least three quotes or issue links showing first-action onboarding pain.
+- Ask for Build Award fit feedback before final submission.
+- Confirm whether any app team wants to test the SDK or sponsor-helper flow.
 
 ## Milestone Community Beats
 
 ### M1
 
 - Publish demo video.
-- Share testnet receipts and contract IDs.
+- Share testnet transaction receipts.
 - Run a short public walkthrough.
-- Ask for feedback on gift/claim UX.
+- Ask for feedback on the sponsor status and receipt UX.
 
 ### M2
 
 - Publish SDK alpha docs.
 - Publish React UI kit component guide.
 - Invite two test integrations.
-- Host office hours for teams trying C-address onboarding.
+- Host office hours for teams trying sponsored first actions.
 
 ### M3
 
-- Publish mainnet pilot report.
+- Publish capped mainnet guidance.
 - Publish runbooks and monitoring notes.
 - Share security review status.
 - Publish "how to embed Lazee Kit" guide.
@@ -41,15 +41,14 @@ Lazee Kit should become a reusable reference for C-address onboarding across Ste
 - Consumer payment apps
 - Creator apps
 - Games
-- Agent automation apps
+- Education and hackathon apps
 - Anchor/CEX withdrawal UX teams
-- DeFi apps that need sponsored account flows
+- DeFi apps that need sponsored first-action flows
 
 ## Adoption Metrics
 
 - Demo completions
-- C-address accounts created in demo
-- Gift links created and claimed
+- Sponsored actions completed in demo
 - SDK installs or imports
 - GitHub stars/forks/issues
 - Partner integrations

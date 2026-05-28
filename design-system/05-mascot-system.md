@@ -2,7 +2,7 @@
 
 ## Main Mascot: Lazee Sun
 
-The Lazee Sun is the friendly face of sponsored first actions. It makes the first C-address interaction feel warm, safe, and easy.
+The Lazee Sun is the friendly face of sponsored first actions. It makes the first Stellar interaction feel warm, safe, and easy.
 
 Visual traits:
 
@@ -19,21 +19,20 @@ Visual traits:
 
 | State | Use | Expression |
 |---|---|---|
-| Happy | claim success, account created | wide smile, bright eyes |
+| Happy | action success | wide smile, bright eyes |
 | Sleepy | "lazy easy" idle state | relaxed eyes, tiny yawn |
-| Focused | permission review | narrowed eyes, clipboard or magnifier |
-| Shielded | safe session active | small shield, confident smile |
+| Focused | action review | narrowed eyes, clipboard or magnifier |
+| Shielded | safety proof | small shield, confident smile |
 | Nervous | risk warning | raised brows, tiny sweat mark |
 | Rock-on | pitch close, demo success | raised hands, energetic grin |
 
 ## Secondary Marks
 
-- Blue Drop: sponsor relay and fees
-- Gift Heart: claim links and gift flows
-- Shield Crown: scoped session safety
+- Blue Drop: sponsorship and fees
 - Spark Badge: verified receipt
-- C-card: C-address identity
-- Chain Link: claim URL and transfer path
+- Puzzle Piece: SDK/UI kit
+- Shield Crown: safety checks
+- Chain Link: transaction proof path
 
 ## Usage Rules
 

@@ -2,38 +2,37 @@
 
 ## Recommended Ask
 
-**$128,000 over 20 weeks**
+**$72,000 over 16 weeks**
 
-This ask is large enough to cover real infrastructure work, but below the $150K cap. It signals ambition without looking like a maximum-by-default request.
+This ask keeps the scope focused on sponsored onboarding and developer tooling instead of expanding into smart-account work or advanced modules before the core need is proven.
 
 ## Tranche Structure
 
 | Milestone | Timeline | Amount | Purpose |
 |---|---:|---:|---|
-| M1: Demo MVP and Proof of Intent | Weeks 1-4 | $12,800 | Prove core C-address onboarding and sponsored gift claim |
-| M2: Developer Kit and Integration Readiness | Weeks 5-12 | $51,200 | Package SDK, UI kit, sessions, indexer, tests, integrations |
-| M3: Production Readiness and Mainnet Pilot | Weeks 13-20 | $64,000 | Harden, review, monitor, pilot, document, maintain |
+| M1: Sponsored First-Action MVP | Weeks 1-4 | $14,400 | Prove a real sponsored Stellar action and receipt |
+| M2: Developer Kit and Integration Readiness | Weeks 5-10 | $28,800 | Package SDK, UI kit, tests, docs, and reference integration |
+| M3: Testnet Release and Maintenance Package | Weeks 11-16 | $28,800 | Harden, document, release, and prepare mainnet guidance |
 
 ## Milestone 1: Demo MVP And Proof Of Intent
 
-Goal: show a reviewer that Lazee Kit works as a real C-address onboarding flow, not a concept deck.
+Goal: show a reviewer that Lazee Kit works as a real sponsored-action flow, not a concept deck.
 
 Deliverables:
 
 - Architecture spec and threat model
-- Lazee Account v1 deployed on testnet
-- Sponsor relay MVP for account creation and first action
-- GiftVault MVP with create, claim, expiry, refund path
-- Reference app demo: create C-address, sponsor first action, create gift, claim gift
+- Minimal sponsor helper for simulation, fee sponsorship, submission, and receipt polling
+- Reference app demo: approve action, sponsor action, submit transaction, view receipt
 - Public 3-minute video
-- Testnet transaction hashes and contract IDs
+- Testnet transaction hashes
+- Short test summary
 
 Reviewer verification:
 
 - Demo URL
 - GitHub repo
-- Contract IDs
 - Transaction hashes
+- Sponsor-helper logs or screenshots with private data removed
 - Short test summary
 
 ## Milestone 2: Developer Kit And Integration Readiness
@@ -44,11 +43,9 @@ Deliverables:
 
 - TypeScript SDK alpha
 - React UI kit alpha
-- SessionRegistry v1
-- Intent schemas for send, swap, bridge_in, gift_create, gift_claim, gift_refund, recurring_payment, DCA
-- Indexer/events API
-- Account, gift, relay, and session test suite
-- Two reference integrations or partner test apps
+- Sponsor helper test suite
+- Receipt display and transaction-state helpers backed by Stellar RPC / Horizon
+- One reference integration or partner test app
 - Integration docs and component guide
 
 Reviewer verification:
@@ -65,19 +62,19 @@ Goal: make Lazee Kit credible for controlled mainnet usage and post-grant mainte
 
 Deliverables:
 
-- Production hardening
+- Testnet release hardening
 - External review or audit-prep package
 - Critical and high issues remediated or documented
-- Observability dashboard
+- Basic reliability dashboard
 - RPC failover and sponsor budget controls
-- Mainnet pilot behind caps and allowlists
+- Mainnet integration guide and capped pilot plan
 - Complete runbooks
 - Public community demo
 - Maintenance plan and roadmap
 
 Reviewer verification:
 
-- Mainnet pilot address or deployment notes
+- Release notes
 - Security package
 - Monitoring dashboard screenshots
 - Runbook links
@@ -87,15 +84,15 @@ Reviewer verification:
 
 | Category | Amount | Notes |
 |---|---:|---|
-| Soroban contracts | $30,000 | Lazee Account, GiftVault, SessionRegistry, SponsorPolicy specs and tests |
-| SDK and UI kit | $24,000 | TypeScript SDK, React components, docs, examples |
-| Sponsor relay and indexer | $22,000 | simulation, sponsorship, receipts, event replay, status APIs |
-| Security and testing | $18,000 | threat model, authorization tests, replay tests, external review prep |
-| Demo, docs, and community | $16,000 | reference app polish, video, pitch, integration guides, updates |
-| Infrastructure and monitoring | $8,000 | RPC, hosting, database, observability, error tracking |
-| Contingency | $10,000 | provider changes, testnet/mainnet differences, bug fixes |
-| **Total** | **$128,000** | |
+| Sponsor helper and transaction flow | $16,000 | simulation, sponsorship, submission, polling, status helpers |
+| SDK and UI kit | $18,000 | TypeScript SDK, React components, docs, examples |
+| Reference app and demo | $10,000 | demo polish, video, public proof artifacts |
+| Security and testing | $10,000 | threat model, replay tests, sponsor-abuse tests, review prep |
+| Documentation and integration support | $8,000 | integration guide, examples, community support |
+| Infrastructure and monitoring | $5,000 | RPC, hosting, observability, error tracking |
+| Contingency | $5,000 | provider changes, testnet/mainnet differences, bug fixes |
+| **Total** | **$72,000** | |
 
 ## Budget Defense
 
-The budget maps to reusable ecosystem infrastructure. The grant is not paying for a single consumer app. It funds open-source primitives that other Stellar teams can adopt: contracts, relay patterns, SDK methods, UI components, docs, test cases, and operational runbooks.
+The budget maps to reusable ecosystem tooling. The grant is not paying for a single consumer app or a broad infrastructure stack. It funds the narrow pieces other Stellar teams need to sponsor first actions safely: sponsor helper patterns, SDK methods, UI components, docs, test cases, and operational runbooks.

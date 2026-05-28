@@ -1,13 +1,13 @@
 # Lazee Kit Proposal Packet
 
-Lazee Kit is an SCF RFP Track proposal packet for **C-Address Tooling & Onboarding**. It frames Lazee Kit as an open-source onboarding and execution kit for Stellar applications: passkey-style C-address smart accounts, sponsored first actions, gift and claim links, SDK/UI components, and safe scoped sessions.
+Lazee Kit is an SCF Build proposal packet for **Stellar app onboarding and sponsored first actions**. It frames Lazee Kit as an open-source developer kit that helps Stellar apps let users complete a first onchain action without dealing with XLM funding, fee setup, or custom transaction plumbing upfront.
 
-This repository is intentionally proposal-first. The root folder contains the SCF proposal packet, architecture, research, pitch, and design-system context. The nested `lazee-kit/` folder contains the early MVP scaffold that should be implemented from this packet without re-deciding product strategy.
+This repository is intentionally proposal-first. The root folder contains the SCF proposal packet, architecture, research, pitch, and design-system context. The nested `lazee-kit/` folder contains early experimental scaffolds and should not define the grant scope by itself.
 
 ## Reading Order
 
 1. [Executive Brief](00-executive-brief.md)
-2. [RFP Research](01-rfp-research.md)
+2. [SCF Build Fit Research](01-rfp-research.md)
 3. [Stellar Impact Thesis](02-stellar-impact-thesis.md)
 4. [Winning Proposal](03-winning-proposal.md)
 5. [System Architecture](04-system-architecture.md)
@@ -23,15 +23,19 @@ This repository is intentionally proposal-first. The root folder contains the SC
 ## Target Program
 
 - Program: Stellar Community Fund Build Award
-- Track: RFP Track
-- RFP: C-Address Tooling & Onboarding
+- Track: Open Track / Developer Tooling
+- Focus: sponsored onboarding, SDK/UI, reference app, docs, tests, and runbooks for Stellar apps
 - Round: SCF #44
-- Default ask: $128,000 in XLM
-- Timeline: 20 weeks
+- Default ask: $72,000 in XLM
+- Timeline: 16 weeks
 
 ## Core Positioning
 
-> Lazee Kit makes C-address onboarding embeddable. A Stellar app can create a user smart account, sponsor the first action, move USDC through gift and claim links, and grant safe automation sessions without forcing users through seed phrases, upfront XLM, or repeated low-value signing prompts.
+> Lazee Kit lets a Stellar app sponsor a user's first meaningful action and show a clear receipt. Developers get reusable SDK methods, React UI components, a reference app, tests, and runbooks instead of rebuilding onboarding, sponsorship, and transaction-status flows from scratch.
+
+## Scope Guardrails
+
+The proposal should not claim a track unless the active SCF form explicitly offers one. It should also avoid over-scoping into advanced modules or smart-account-specific work unless those become directly required by the shipped MVP.
 
 ## What This Folder Must Not Contain
 
@@ -42,5 +46,5 @@ This repository is intentionally proposal-first. The root folder contains the SC
 
 ## Source Links
 
-- SCF RFP Track: https://stellar.gitbook.io/scf-handbook/scf-awards/build-award/rfp-track
+- SCF Build Award: https://stellar.gitbook.io/scf-handbook/scf-awards/build-award
 - SCF awards directory: https://communityfund.stellar.org/awards

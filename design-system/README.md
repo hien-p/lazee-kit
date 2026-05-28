@@ -6,7 +6,7 @@ The design principle is:
 
 > Friendly first touch, serious protocol layer.
 
-Lazee Kit should make C-address onboarding feel easy and safe for users, while still giving SCF reviewers and Stellar developers confidence that the system is technically credible.
+Lazee Kit should make sponsored first actions feel easy and safe for users, while still giving SCF reviewers and Stellar developers confidence that the system is technically credible.
 
 ## Reading Order
 

@@ -4,54 +4,48 @@
 
 | Threat | Risk | Mitigation |
 |---|---|---|
-| Account spoofing | Attacker claims or controls another account | passkey challenge binding, signer registry, nonces |
-| Gift double claim | Gift claimed twice | GiftVault status checks and claim events |
-| Wrong claim secret | Unauthorized gift claim | hash verification and receiver binding |
-| Relay tampering | Relay changes transaction plan | signed intent digest, simulation matching, contract policy |
-| Sponsor abuse | Bots drain sponsor budget | rate limits, app quotas, action allowlists, budget alarms |
-| Session overreach | Agent exceeds user permission | caps, expiry, allowlists, revocation, counters |
-| Replay | Old payload reused | nonces, ledger bounds, digest binding |
-| TTL expiration | State becomes inaccessible | keeper jobs, flow-based extension, alerts |
-| Indexer inconsistency | UI shows stale state | event replay, direct contract checks for critical paths |
+| Transaction-plan tampering | User approves one action but helper submits another | signed/approved transaction preview, simulation matching, exact operation display |
+| Sponsor abuse | Bots drain sponsor budget | app keys, action allowlists, rate limits, user caps, app quotas, budget alarms |
+| Replay | Old payload reused | ledger bounds, idempotency keys, digest binding, duplicate submission checks |
 | RPC instability | Transactions fail or duplicate receipts | failover, retries, idempotent status tracking |
+| Receipt mismatch | UI shows success or failure incorrectly | verify status through Stellar RPC / Horizon and transaction hashes |
+| Leaky logs | Signing material, tokens, or private data enters logs | log redaction, structured logging, secret scanning |
+| Misconfigured app integration | App sponsors unintended actions | configuration validation, safe defaults, test fixtures, deployment checklist |
+| Sponsor key compromise | Attacker spends sponsor funds | limited sponsor balances, rotation process, alerts, emergency disable path |
 
 ## Required Tests
 
-- Authorization matrix
-- Nonce and replay tests
-- Gift create, claim, double claim, wrong secret, expiry, refund
-- Session max per transaction
-- Session recurring limit
-- Session lifetime limit
-- Session expiry
-- Session revocation
-- Out-of-scope agent call
-- Relay budget and rate limits
-- RPC failover
-- Indexer replay consistency
-- Pause and recovery drills
+- Transaction-plan preview and simulation matching
+- Ledger-bound and replay tests
+- Sponsor budget and rate-limit tests
+- Allowed-action and rejected-action tests
+- RPC failover and retry tests
+- Receipt status consistency tests
+- Log redaction checks
+- Emergency disable and sponsor-key rotation drill
+- Integration fixture tests for SDK methods and UI states
 
 ## Operational Runbooks
 
-### Sponsor Relay Abuse
+### Sponsor Abuse
 
 Disable app key, pause affected sponsored action type, preserve logs, rotate sponsor account if needed, publish advisory if user impact exists.
 
-### Contract Bug
+### Sponsor Key Incident
 
-Pause affected flows if pause control exists, stop relay submissions, document severity, prepare fix or migration path, publish advisory.
+Disable sponsorship, move remaining funds, rotate keys, review logs, publish incident note if any user-facing action was affected.
 
 ### RPC Degradation
 
 Fail over to secondary RPC, classify pending receipts, retry safely, monitor duplicate submissions.
 
-### Indexer Lag
+### Receipt Mismatch
 
-Switch critical UI state to direct contract reads, throttle non-critical dashboards, replay from last safe cursor.
+Switch UI to network-verified status, mark affected receipts as pending review, replay transaction checks from known hashes, publish correction if needed.
 
-### Gift Link Phishing
+### Integration Misconfiguration
 
-Warn users, verify domain, improve claim preview, rotate public messaging, block known malicious referrers where appropriate.
+Disable the app key, compare configured allowlist with submitted operations, ship config fix, add fixture coverage for the failed case.
 
 ## Maintenance Commitment
 

@@ -16,7 +16,7 @@ The provided visual reference uses a soft sticker interface style:
 
 | Grid Area | Observed Content | Lazee Translation |
 |---|---|---|
-| Top-left | Blue hero panel with oversized rounded characters | Landing hero with Lazee Sun and floating C-address stickers |
+| Top-left | Blue hero panel with oversized rounded characters | Landing hero with Lazee Sun and sponsored-action stickers |
 | Top-center | Large pink and black rounded mascot blocks | Dual user/protocol modes: friendly user face and technical black badge |
 | Top-right | Icon grid on muted blue panel | Sticker icon system for passkey, sponsor, gift, session |
 | Bottom-left | Large black mascot on cream background | Developer/protocol mascot for SDK and architecture sections |
@@ -59,5 +59,5 @@ The reference should inspire the feel, not be copied.
 - Mascot becomes **Lazee Sun**.
 - Stickers become Stellar-specific flow icons.
 - Pink cards become demo steps.
-- Muted blue icon grid becomes RFP fit/proof grid.
+- Muted blue icon grid becomes Build-fit/proof grid.
 - Cream scenes become proposal and dashboard backgrounds.

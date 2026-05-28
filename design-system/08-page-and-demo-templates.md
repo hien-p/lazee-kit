@@ -5,13 +5,13 @@
 First viewport:
 
 - Lazee Kit wordmark
-- Headline: "C-address onboarding, made embeddable"
-- Subcopy: "Passkeys, sponsored first actions, gift links, and scoped sessions for Stellar apps."
+- Headline: "Sponsored first actions, made embeddable"
+- Subcopy: "Sponsor helper, SDK/UI components, receipts, docs, tests, and runbooks for Stellar apps."
 - CTAs: "Watch demo" and "Read proposal"
 - Lazee Sun hero mascot
-- Proof pills: RFP Track, Open source, Sponsored first action, Passkey UX
+- Proof pills: Open Track, Open source, Sponsored first action, Real receipts, SDK/UI kit
 
-## RFP Fit Page
+## Build Fit Page
 
 Layout:
 
@@ -25,13 +25,9 @@ Use green check stickers for strong current fit and orange planned stickers for 
 
 Step timeline:
 
-1. Create C-address
-2. Sponsor first action
-3. Create gift
-4. Claim gift
-5. View receipt
-6. Grant scoped session
-7. Revoke session
+1. Approve one clear action
+2. Sponsor and submit
+3. View receipt
 
 Each step should have one screenshot/card and one plain-English outcome.
 
@@ -48,20 +44,20 @@ Use Protocol Mode:
 
 Must show:
 
-- user authorization
-- sponsor relay
-- contracts
-- indexer
+- user approval
+- sponsor helper
+- Stellar RPC / Horizon
 - SDK/UI
-- optional providers
+- receipt status
+- observability and runbooks
 
 ## Milestone Page
 
 Use three large tranche cards:
 
-- M1 Demo MVP
+- M1 Sponsored First-Action MVP
 - M2 Developer Kit
-- M3 Production Pilot
+- M3 Testnet Release and Maintenance Package
 
 Each card includes:
 

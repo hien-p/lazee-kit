@@ -1,4 +1,4 @@
-# Lazee Kit — Soroban Workspace
+# Lazee Kit - Soroban Workspace
 
 Soroban dApp scaffold for the **Lazee Kit** proposal (see `../` for the proposal packet).
 Generated with the Stellar contract-init template
@@ -8,18 +8,13 @@ a Cargo workspace of Rust contracts plus the SDF Astro frontend, wired together 
 
 ## Contracts
 
-Maps to the containers in `../04-system-architecture.md`:
+The current Build scope should stay focused on sponsored first actions, SDK/UI, reference app, docs, tests, and runbooks. Contract work should stay minimal and only support the demo when it is clearly required.
 
-| Crate | Architecture container | Responsibility |
+| Crate | Status | Responsibility |
 |---|---|---|
-| `contracts/lazee-account` | Lazee Account | C-address smart account: signer registry, authorization, nonces, policy hooks |
-| `contracts/gift-vault` | GiftVault | Escrows gift assets, validates claims, handles expiry and refunds |
-| `contracts/session-registry` | SessionRegistry | Scoped app/agent grants: caps, expiry, revocation, counters |
+| `contracts/lazee-account` | Experimental scaffold | Early account-helper experiment, not core Build scope |
 
-Each crate is the contract-init sample (`hello`) — replace the bodies with the
-flows described in `../04-system-architecture.md`. `SponsorPolicy` is optional in
-the architecture and not yet scaffolded; add it with
-`stellar contract init . --name sponsor-policy` when needed.
+The remaining crate is still close to the contract-init sample. Implement the sponsor helper, SDK/UI, reference app, and receipt flow first; only promote a contract into the SCF critical path after the demo proves it is required.
 
 ## Quick start
 
@@ -30,7 +25,7 @@ stellar network container start local
 cd lazee-kit
 cp .env.example .env        # set STELLAR_ACCOUNT / network vars
 npm install
-npm run dev                 # init.js: fund → build → deploy → bind → import, then astro dev
+npm run dev                 # init.js: fund -> build -> deploy -> bind -> import, then astro dev
 ```
 
 Build/test contracts only (no network needed):
@@ -42,7 +37,7 @@ cargo test
 
 ## Layout
 
-- `contracts/*` — Rust contract crates (workspace members)
-- `initialize.js` — generic build/deploy/bind/import pipeline (auto-discovers all contracts)
-- `src/` — Astro frontend; `src/pages/index.astro` calls `lazee-account.hello`
-- `packages/` — generated TypeScript contract clients (created by `npm run dev`)
+- `contracts/*` - Rust contract crates (workspace members)
+- `initialize.js` - generic build/deploy/bind/import pipeline (auto-discovers all contracts)
+- `src/` - Astro frontend; `src/pages/index.astro` calls `lazee-account.hello`
+- `packages/` - generated TypeScript contract clients (created by `npm run dev`)

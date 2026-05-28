@@ -2,72 +2,56 @@
 
 ## Architecture Goal
 
-Lazee Kit turns C-address onboarding into a reusable system. The architecture separates user authorization, fee sponsorship, asset movement, session policy, receipt indexing, and app integration.
+Lazee Kit turns sponsored first actions into a reusable system. The architecture separates user approval, fee sponsorship, transaction submission, receipt display, and app integration.
 
 ## Containers
 
 | Container | Technology | Responsibility |
 |---|---|---|
-| Lazee Account | Soroban Rust | C-address smart account, signer registry, authorization, nonces, policy hooks |
-| GiftVault | Soroban Rust | Escrows gift assets, validates claims, handles expiry and refunds |
-| SessionRegistry | Soroban Rust | Stores scoped app/agent grants, caps, expiry, revocation, counters |
-| SponsorPolicy | Soroban Rust, optional | Defines approved sponsored actions and app policy metadata |
-| Sponsor Relay | Node/Bun service | Simulates, sponsors, submits, polls, and records transactions |
-| Intent Orchestrator | Node/Bun service | Normalizes send, swap, bridge, gift, claim, recurring, DCA intents |
-| Indexer/Events API | Worker plus database | Rebuilds account, gift, session, sponsor, and receipt state |
-| Lazee SDK | TypeScript | Client API for account, sponsor, gift, session, intent, receipt flows |
-| React UI Kit | React | Drop-in onboarding, gift, claim, session, receipt, and risk components |
 | Reference App | Web app | Reviewer demo and developer integration example |
+| Lazee SDK | TypeScript | Client API for sponsored actions, receipt status, and integration helpers |
+| React UI Kit | React | Drop-in onboarding, sponsor status, receipt, and error-state components |
+| Sponsor Helper | Node/Bun service | Simulates, sponsors, submits, and polls transactions |
+| Receipt Store | Lightweight database, optional | Convenience cache for demo status and analytics |
+| Soroban Examples | Soroban Rust, optional | Small reference contracts only when a demo action needs a contract target |
+
+Advanced modules such as claim links, sessions, orchestration, indexing, and smart-account-specific account work should not be presented as required Build scope. They are too broad for the current application unless a later milestone explicitly proves the need.
 
 ## Trust Model
 
-- User authorization is enforced by the Lazee Account and related contracts.
-- Sponsor relay pays fees but cannot bypass user or session authorization.
-- Gift links do not custody funds by themselves; funds sit in GiftVault.
-- Agents receive scoped session credentials, never user private keys.
-- Session policies enforce allowed assets, contracts, intent types, caps, expiry, and revocation.
-- Indexer state is convenience state; critical actions can be verified against contract state and events.
+- The user approves the action with their wallet or supported signer.
+- Sponsor helper pays fees but cannot replace user approval.
+- The helper does not custody user assets and does not become the source of truth.
+- Receipt state is convenience state; critical actions are verified through Stellar RPC / Horizon and transaction hashes.
+- Apps can self-host the sponsor helper and configure their own budgets, limits, and allowed actions.
 
 ## Core Flows
 
-### C-Address Onboarding
+### Sponsored First Action
 
 1. User opens a Lazee-enabled app.
-2. App starts passkey-style account creation.
-3. SDK builds account initialization request.
-4. Sponsor relay simulates and sponsors the transaction.
-5. Lazee Account stores signer and emits account event.
-6. Indexer records account metadata and receipt.
+2. App presents one clearly described Stellar action.
+3. User approves the action with their wallet or supported signer.
+4. SDK builds the transaction plan and expected result.
+5. Sponsor helper simulates the transaction.
+6. Sponsor helper applies fee sponsorship and submits.
+7. Reference app displays success/failure, tx hash, receipt, and next-step guidance.
 
-### Gift Create And Claim
+### Developer Integration
 
-1. Sender selects asset, amount, expiry, and optional message.
-2. SDK creates gift intent.
-3. Sender authorizes transaction.
-4. GiftVault escrows funds and emits GiftCreated.
-5. Receiver opens claim URL.
-6. Receiver creates or selects a Lazee C-address.
-7. Claim transaction proves secret and binds receiver address.
-8. GiftVault transfers funds and emits GiftClaimed.
-
-### Scoped Session
-
-1. User reviews permission copy.
-2. User authorizes session creation.
-3. SessionRegistry stores policy and counters.
-4. App or agent executes within scope.
-5. Contract rejects attempts beyond caps, expiry, asset allowlist, or contract allowlist.
-6. User can revoke session at any time.
+1. Developer installs the SDK and React UI kit.
+2. Developer configures allowed actions, sponsor budget, and RPC settings.
+3. App calls SDK methods to prepare, sponsor, submit, and poll.
+4. UI components render sponsor progress, failure states, and receipt details.
+5. Runbooks explain operational handling for RPC failures, abuse, and budget limits.
 
 ## Storage And TTL Strategy
 
-Persistent state includes signer records, session policies, spend counters, gift records, and app registry metadata. Lazee Kit should treat Soroban storage TTL as a production concern:
+Persistent onchain state should stay minimal. The MVP should prefer transaction hashes, RPC / Horizon reads, and lightweight receipt state over a custom event service.
 
-- Extend account state on login and execution.
-- Extend active session state during execution and keeper runs.
-- Extend gift state until expiry plus refund window.
-- Rebuild UI state from events when possible.
-- Alert when important entries approach expiration.
+- Store only what is required for demo status and support.
+- Rebuild critical UI state from network reads when possible.
+- Alert on sponsor budget, failed submissions, and RPC degradation.
 
 ## Operational Architecture
 
@@ -78,5 +62,5 @@ Production deployments should include:
 - Rate limits by app key and IP
 - Simulation before sponsor signature
 - Receipt polling and retry classification
-- Error taxonomy for user cancellations, RPC failures, contract rejects, and sponsor rejects
-- Dashboards for account creation, gift claim, session execution, sponsor spend, RPC failover, and indexer lag
+- Error taxonomy for user cancellations, RPC failures, rejected transactions, and sponsor rejects
+- Dashboards for sponsored attempts, sponsor spend, RPC failures, and completion rate

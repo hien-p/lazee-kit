@@ -2,61 +2,62 @@
 
 ## 30-Second Pitch
 
-Lazee Kit makes C-addresses usable inside real Stellar apps. A user can create a smart account with passkey-style UX, complete a sponsored first action without XLM, claim USDC through a link, and later grant an agent a capped session without sharing keys. For developers, Lazee ships the contracts, SDK, React components, relay, docs, and reference app needed to embed that flow.
+Lazee Kit helps Stellar apps get users to their first real onchain action faster. Instead of forcing new users through XLM funding, fee setup, repeated signing confusion, and unclear transaction states, Lazee provides a sponsor helper, SDK, React UI components, receipts, docs, tests, and runbooks that apps can embed.
 
 ## 1-Minute Pitch
 
-C-addresses can unlock better UX on Stellar, but today they are still too hard to create, fund, and explain. Lazee Kit turns C-address onboarding into reusable infrastructure for apps. The first demo takes a user from no wallet and no XLM to a sponsored C-address action and claimed USDC. The developer kit then packages that into smart account contracts, sponsor relay, gift and claim links, scoped sessions, SDK methods, React components, tests, and runbooks. We are applying to the SCF RFP Track because this directly addresses C-Address Tooling & Onboarding and gives the ecosystem a reusable layer rather than another isolated wallet.
+Stellar is fast and affordable, but many apps still lose users before the first useful action. New users hit funding, fees, wallet prompts, trustlines, and transaction uncertainty before they understand why the app matters.
+
+Lazee Kit turns that first moment into reusable developer tooling. The demo takes a fresh user from opening an app to completing a sponsored Stellar transaction with a readable receipt. The developer kit packages that pattern into SDK methods, UI components, a sponsor helper, reference app, tests, and operational runbooks.
+
+We are applying through SCF Build Open Track / Developer Tooling because this is reusable infrastructure for the Stellar ecosystem, not a one-off consumer app.
 
 ## 3-Minute Pitch
 
 ### 0:00-0:20 - Problem
 
-"C-addresses are one of the clearest paths to better Stellar UX, but the first minute is still too hard. Users should not need to understand account types, reserves, funding, and signatures before they can receive value."
+"Stellar has strong rails, but the first minute inside many apps is still too technical. Users should not need to understand funding, fees, trustlines, and transaction status before they experience value."
 
 ### 0:20-0:45 - Product
 
-"Lazee Kit is an open-source onboarding and execution kit. It lets apps create a C-address with passkey-style UX, sponsor the first action, and move USDC through normal product flows like gift and claim links."
+"Lazee Kit is an open-source sponsored onboarding kit. It lets apps present one clear Stellar action, sponsor the fee, submit the transaction, and show a receipt through reusable SDK and UI components."
 
 ### 0:45-1:35 - Demo
 
 Show the reference app:
 
-1. Fresh user, no wallet, no XLM.
-2. Create Lazee Account.
-3. Sponsor relay simulates and submits.
-4. Sender creates USDC gift link.
-5. Receiver claims with a new C-address.
-6. Receipt and balance appear.
+1. Fresh user opens the app.
+2. App shows one clear action and expected result.
+3. User approves with a supported Stellar signer.
+4. Sponsor helper simulates, sponsors, submits, and confirms.
+5. Receipt appears with tx hash and status.
+6. Developer view shows the SDK/UI pieces behind the flow.
 
 Narration:
 
-"This is the user experience we want app developers to be able to embed. The network details are still real, but they are no longer the first thing a user has to understand."
+"This is the user experience we want Stellar app developers to be able to embed. The transaction is still real, but funding and network mechanics are no longer the first thing a user has to solve."
 
 ### 1:35-2:05 - Developer Layer
 
 Show SDK/UI cards:
 
-- create account
-- sponsor transaction
-- create gift
-- claim gift
-- list receipt
-- create scoped session
-- revoke session
+- prepare sponsored action
+- simulate transaction
+- sponsor and submit
+- poll receipt
+- render sponsor status
+- render receipt and error states
 
-"The output is not one app. It is reusable contracts, SDKs, UI components, docs, tests, and runbooks."
+"The output is not one app. It is reusable sponsor infrastructure, SDKs, UI components, docs, tests, and runbooks."
 
-### 2:05-2:35 - Safe Sessions
+### 2:05-2:35 - Scope Discipline
 
-Show DCA permission preview:
-
-"Agents and automations should never need private keys. Lazee sessions have caps, expiry, allowed routes, and revocation enforced by contract policy."
+"We are not asking SCF to fund advanced modules or a smart-account rewrite. The Build request stays focused on the smallest useful developer layer: sponsored first actions and the reusable app components around them."
 
 ### 2:35-3:00 - Close
 
-"SCF #41 proved that C-address tooling matters. Lazee Kit is the next layer: app-embedded onboarding, sponsorship, claim flows, safe sessions, and developer tooling that can compound across the Stellar ecosystem."
+"The win is not that Lazee hides Stellar. The win is that Lazee lets users experience Stellar before they have to understand every operational detail, and gives developers a reusable way to do that safely."
 
 ## Demo Close Line
 
-"The win is not that Lazee hides Stellar. The win is that Lazee lets users experience Stellar before they have to understand every Stellar detail."
+"From first visit to first Stellar action in under 60 seconds."

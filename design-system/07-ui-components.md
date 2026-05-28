@@ -3,7 +3,7 @@
 ## Marketing Components
 
 - Hero with Lazee Sun mascot, floating sticker icons, proof pills, and two CTAs
-- RFP fit card showing requirement and Lazee response
+- Build fit card showing requirement and Lazee response
 - Before/after onboarding comparison
 - Ecosystem impact grid
 - Architecture preview band

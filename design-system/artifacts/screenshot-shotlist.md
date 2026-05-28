@@ -3,9 +3,9 @@
 ## Required Screenshots
 
 1. Landing hero with Lazee Sun and proof pills
-2. RFP fit map
-3. C-address creation modal
-4. Sponsor relay status card
+2. Build fit map
+3. Sponsored action preview
+4. Sponsor helper status card
 5. Gift link creator
 6. Receiver claim page
 7. Receipt and balance screen

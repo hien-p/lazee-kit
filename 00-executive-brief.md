@@ -2,51 +2,51 @@
 
 ## One-Liner
 
-**Lazee Kit is an open-source C-address onboarding and execution kit for Stellar apps.**
+**Lazee Kit is an open-source sponsored onboarding kit for Stellar apps.**
 
 ## Why This Wins
 
-The C-address RFP is not asking for another generic wallet. It is asking the ecosystem to make C-addresses practical: easy to create, easy to fund, easy to use, and easy for developers to integrate. Lazee Kit answers that directly with a reusable product surface and technical stack:
+The strongest SCF framing is not advanced modules, smart-account rewrites, or a broad execution platform. The clean problem is simpler: Stellar apps still have to explain funding, fees, wallet setup, signing, transaction status, and failed submissions before users feel the product value.
 
-- Passkey-style C-address creation
-- Sponsored first actions with no upfront XLM
-- Gift and claim links for mainstream USDC flows
-- SDK and React UI kit for app developers
-- Scoped sessions for safe app and agent automation
-- Reference app, docs, tests, and runbooks
+Lazee Kit answers that with a tight developer-tooling scope:
 
-The proposal should make reviewers feel that Lazee Kit is not merely a demo. It is a missing developer layer for C-address adoption across payment apps, consumer apps, games, creators, agents, and wallet teams.
+- Sponsor a user's first meaningful Stellar action
+- Show clear status and receipts from real transaction hashes
+- Provide TypeScript SDK methods and React UI components
+- Ship a reference app, docs, tests, threat model, and runbooks
+
+Advanced modules such as claim links, sessions, orchestration, indexing, and smart-account-specific claims should not be part of the core Build request. They can remain experimental notes only if clearly labeled outside the funded scope.
 
 ## Winning Narrative
 
-Today, Stellar has strong settlement primitives and a growing Soroban ecosystem, but the user journey still feels crypto-native too early. Users hit account types, reserves, funding, trustlines, and signing prompts before they experience value.
+Today, Stellar has strong settlement primitives and a growing Soroban ecosystem, but the first user journey still feels crypto-native too early. Users hit funding, fees, trustlines, wallet prompts, and transaction uncertainty before they experience value.
 
 Lazee Kit changes the first minute:
 
-1. A user opens an app.
-2. The app creates a C-address through a passkey-style flow.
-3. The app sponsors the first action.
-4. The user claims or sends USDC.
-5. The app shows a readable receipt.
-6. Later, the user can grant a scoped automation session instead of sharing keys.
+1. A user opens a Stellar app.
+2. The app presents one clear action.
+3. The user approves the action with their wallet or supported signer.
+4. The app sponsors the transaction and submits it.
+5. The app shows a readable receipt and next step.
+6. The developer reuses the same flow through SDK methods and UI components.
 
-That is the pitch: **from zero wallet to first Stellar action in under 60 seconds.**
+That is the pitch: **from first visit to first Stellar action in under 60 seconds.**
 
 ## Recommended Ask
 
-- Total: **$128,000**
-- Duration: **20 weeks**
+- Total: **$72,000**
+- Duration: **16 weeks**
 - Milestones:
-  - M1: Demo MVP and proof of intent
-  - M2: Developer kit and integration readiness
-  - M3: Production hardening and mainnet pilot
+  - M1: Sponsored first-action MVP
+  - M2: SDK, UI kit, and reference integration
+  - M3: Testnet release, docs, and maintenance package
 
 ## Reviewer Takeaway
 
 If Lazee Kit ships, the ecosystem gets reusable onboarding infrastructure rather than one more isolated app. Each output compounds:
 
-- Contracts can be inspected and forked.
-- SDKs and components can be embedded.
-- Demo flows become references for wallets and apps.
-- The sponsor relay and session model become operational examples.
-- Documentation helps the next C-address team move faster.
+- Sponsor helper patterns can be inspected and self-hosted.
+- SDKs and components can be embedded by other Stellar apps.
+- Demo flows become references for new builders.
+- Documentation helps the next Stellar team avoid first-minute UX mistakes.
+- Runbooks make sponsorship safer to operate after grant funding.

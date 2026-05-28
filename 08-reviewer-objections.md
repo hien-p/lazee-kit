@@ -2,39 +2,31 @@
 
 ## Is this just another wallet?
 
-No. Lazee Kit is not positioned as a standalone wallet. It is an embeddable onboarding and execution kit for Stellar apps and wallet teams. The funded outputs are contracts, SDKs, UI components, relay patterns, tests, and documentation.
+No. Lazee Kit is not positioned as a standalone wallet. It is an embeddable sponsored-onboarding kit for Stellar apps. The funded outputs are a sponsor helper, SDK, UI components, reference app, tests, docs, and operational runbooks.
 
-## Why fund another C-address project?
+## Why should SCF fund this?
 
-SCF #41 funded multiple C-address related projects, which confirms the ecosystem need. Lazee Kit differentiates by combining onboarding, sponsorship, gift/claim UX, SDK/UI packaging, receipts, scoped sessions, and operational runbooks in one app-embedded developer layer.
+Stellar apps repeatedly rebuild the same first-action infrastructure: fee sponsorship, transaction submission, user-readable status, error handling, and support flows. Lazee Kit turns that repeated work into an open-source package that other teams can inspect, fork, and embed.
 
-## How is this different from Latch, G2C, or KMP smart account tooling?
+## Is this a smart-account project?
 
-Lazee should acknowledge those projects as complementary. The distinction is the product surface:
-
-- Latch/G2C-style projects prove C-address onboarding and funding are important.
-- KMP-style SDK work improves developer primitives.
-- Lazee packages the full app flow: create, sponsor, claim, receipt, session, revoke, SDK, components, demo, docs.
+No. The proposal should not be framed around a smart-account rebuild unless the submitted product actually depends on it. Lazee Kit's core value is sponsored first-action tooling for Stellar apps.
 
 ## Is the scope too broad?
 
-The full architecture is broad, but the milestone plan is staged. M1 is narrow: C-address creation, sponsored first action, gift create/claim, receipt. M2 packages developer tooling. M3 hardens and pilots. Advanced bridge and agent flows are framed as extensions, not the M1 dependency.
+The scope is intentionally narrow. M1 proves one sponsored Stellar action and receipt. M2 packages the SDK, UI kit, tests, and docs. M3 hardens the release and runbooks. Advanced flows stay outside the core Build request.
 
-## Is the sponsor relay centralized?
+## Is the sponsor helper centralized?
 
-The relay is operational infrastructure, not an authorization authority. It pays fees, simulates transactions, submits, and tracks receipts. User authorization and session policy remain onchain. Apps can self-host the relay or use the reference deployment.
+The sponsor helper is operational infrastructure, not an authorization authority. It pays fees, simulates transactions, submits, and tracks receipts. The user still approves the action. Apps can self-host the helper or adapt the reference implementation.
 
-## What if passkey support is risky?
+## What prevents sponsor-budget abuse?
 
-M1 should keep the account model small and include an external signer fallback where needed. Mainnet pilot should be capped and limited until tests, threat model, and external review are complete.
+The MVP should include app keys, action allowlists, per-user and per-app caps, rate limits, simulation checks, monitoring, and emergency disable paths. Sponsored actions should start capped and expand only after testnet evidence.
 
-## How do you prevent gift link phishing?
+## What if RPC or submission fails?
 
-Gift links need clear domain, claim preview, no raw private key handling, expiry, receiver binding, and secret scrubbing in logs. The URL alone should not custody funds; it only carries claim material that must pass contract checks.
-
-## How do agents avoid overreach?
-
-Agents execute through scoped sessions. Policies include allowed assets, allowed contracts, intent types, max per transaction, recurring limits, lifetime limits, expiry, receiver allowlists, and revocation. Out-of-scope attempts fail.
+Lazee Kit should classify failures clearly: user canceled, simulation failed, sponsor rejected, RPC failed, transaction pending, transaction failed, or transaction succeeded. The UI should show next steps and the runbooks should explain safe retry behavior.
 
 ## How will this be maintained?
 
@@ -42,4 +34,4 @@ Maintenance includes monthly release notes, issue triage, SDK compatibility upda
 
 ## What exists after the grant?
 
-Open-source contracts, SDK, React UI kit, reference app, sponsor relay, indexer, docs, tests, diagrams, demo videos, and runbooks. These remain useful even if a single hosted deployment stops.
+Open-source sponsor helper, SDK, React UI kit, reference app, docs, tests, diagrams, demo videos, and runbooks. These remain useful even if a single hosted deployment stops.

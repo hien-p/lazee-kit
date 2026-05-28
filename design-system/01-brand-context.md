@@ -2,16 +2,16 @@
 
 ## Brand Thesis
 
-Lazee Kit makes C-address onboarding feel lazy-easy, safe, and embeddable. It lowers the emotional friction of smart accounts without hiding the security model.
+Lazee Kit makes a sponsored first Stellar action feel easy, safe, and embeddable. It lowers the emotional friction of fees, funding, signing, and transaction status without hiding the security model.
 
 ## Audiences
 
 | Audience | What They Need To Feel |
 |---|---|
-| SCF reviewers | This is RFP-aligned, technical, maintained, and impactful |
+| SCF reviewers | This is Build-ready, technical, maintained, and impactful |
 | Stellar developers | I can embed this into my app without inventing everything |
 | Wallet/app teams | This complements my product rather than competing with it |
-| End users | I can claim, send, and grant safely without understanding everything first |
+| End users | I can approve one clear action and understand what happened |
 
 ## Personality
 
@@ -26,10 +26,9 @@ Lazee Kit makes C-address onboarding feel lazy-easy, safe, and embeddable. It lo
 
 Use:
 
-- "C-address onboarding"
 - "Sponsored first action"
-- "Claim USDC without upfront XLM"
-- "Scoped sessions"
+- "First Stellar action without manual XLM setup"
+- "Readable receipt"
 - "Embeddable developer kit"
 - "Open-source reference implementation"
 

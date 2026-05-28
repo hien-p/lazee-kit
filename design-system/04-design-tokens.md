@@ -13,7 +13,7 @@
 | lazee-hot-pink | #FF4F8B | active CTA, emphasis |
 | lazee-blush | #FFD4E3 | soft panels |
 | lazee-sky | #B9D8FF | passkey and onboarding |
-| lazee-blue | #7EC8F5 | sponsor relay, info states |
+| lazee-blue | #7EC8F5 | sponsor helper, info states |
 | lazee-mint | #B9F7C8 | success support |
 | lazee-lemon | #FFD966 | mascot face, completion |
 | lazee-orange | #FF9E3D | sun rays, warnings |
